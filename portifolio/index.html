@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Data Engineer Aya Alaa Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Critical fixes for horizontal scrolling */
+        * {
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        /* Container fixes */
+        .main-container,
+        .about-container,
+        .skills-container,
+        .services-container,
+        .projects-container,
+        .contact-hero-container {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Grid and flex fixes */
+        .skills-grid,
+        .services-grid,
+        .projects-grid {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        /* Image fixes */
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Form fixes */
+        .contact-form {
+            max-width: 100%;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .form-group {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .main-container {
+                padding: 0 1rem;
+            }
+            
+            .about-container,
+            .skills-container,
+            .services-container,
+            .projects-container,
+            .contact-hero-container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Aya Alaa</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#Home">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <a href="#about">About</a>
+                </div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#skills">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#services">Services</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#projects">Projects</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#contactt">Contact Me</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#home" onclick="closeDropdown()">Home</a>
+                <a href="#about" onclick="closeDropdown()">About</a>
+                <a href="#skills" onclick="closeDropdown()">Skills</a>
+                <a href="#services" onclick="closeDropdown()">Services</a>
+                <a href="#projects" onclick="closeDropdown()">Projects</a>
+                <a href="#contactt" onclick="closeDropdown()">Contact Me</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="main-container">
+            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                <img src="photo_2025-08-22_16-55-21.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Aya Alaa</span></h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">I help businesses grow by transforming their data into actionable insights. From cleaning and structuring raw data to creating clear reports and dashboards, I ensure you have the information you need to make smarter, faster decisions.</p>
+                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                    <a href="https://github.com/Aya-114" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aya-alaa-827303315/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://wa.me/201270144307?text=Hello%20Aya%2C%20I%27d%20like%20to%20know%20more%20about%20your%20Data%20Engineering%20services" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                    <a href="https://drive.google.com/file/d/1jTz1cubQugsn8cUSLOuuT2aCsIVXFlnJ/view?usp=sharing" target="_blank">
+                        <button>View Resume</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+      <div class="about-container" data-aos="fade-up" data-aos-duration="1000">
+        <div class="about-content">
+          <h2>About Me</h2>
+          <p> I'm Aya Alaa, a <b>Data Engineer</b> who helps businesses turn raw data into clear, actionable insights. I specialize in organizing, cleaning, and analyzing data using tools like <b>Python, Pandas, NumPy, MySQL, and Excel</b>, enabling companies to make smarter, faster decisions. </p>
+          <p> I design efficient data pipelines, perform data analysis, and create systems that simplify complex information into usable results. I studied <b>Computer Science at Helwan National University</b>, giving me a strong foundation in programming, algorithms, and databases. </p>
+          <p> I'm passionate about solving real-world problems with data and delivering solutions that make a measurable impact. </p>
+          <div class="about-buttons">
+            <a href="https://drive.google.com/drive/folders/1zTJVRejpRQh8afczupLJKCjVKjXtwEEO" target="_blank">
+              <button>View Resume</button>
+            </a>
+            <a href="#projects">
+              <button class="alt-btn">View My Projects</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-video">
+          <video controls poster="your-thumbnail.jpg">
+            <source src="Recording 2025-08-22 231433.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills-section" id="skills">
+      <div class="skills-container">
+        <h2>My Skills</h2>
+
+        <div class="skills-category">
+          <h3>Data Analysis</h3>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+              <p>Python</p>
+            </div>
+            <div class="skill-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+              <p>NumPy</p>
+            </div>
+            <div class="skill-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+              <p>Pandas</p>
+            </div>
+            <div class="skill-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib">
+              <p>Matplotlib</p>
+            </div>
+            <div class="skill-card">
+              <img src="seaborn-logo-png_seeklogo-441844.png" alt="Seaborn">
+              <p>Seaborn</p>
+            </div>
+            <div class="skill-card">
+              <img src="image_processing20210621-11273-1t1546.png" alt="Jupyter">
+              <p>Jupyter</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>Data Science</h3>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+              <p>TensorFlow</p>
+            </div>
+            <div class="skill-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+              <p>PyTorch</p>
+            </div>
+            <div class="skill-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">
+              <p>Scikit-learn</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>Data Engineering</h3>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <img src="aws.png" alt="AWS">
+              <p>AWS</p>
+            </div>
+            <div class="skill-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+              <p>Azure</p>
+            </div>
+            <div class="skill-card">
+              <img src="apache-spark.png" alt="Spark">
+              <p>Apache Spark</p>
+            </div>
+            <div class="skill-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+              <p>SQL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+      <div class="services-container" data-aos="fade-up" data-aos-duration="1200">
+        <h2>My Services</h2>
+        <div class="services-box">
+          <div class="services-grid">
+            <div class="service">
+              <h3>Data Pipeline Development & Automation</h3>
+              <p>Designing, building, and automating data pipelines to collect, transform, and load data efficiently.</p>
+            </div>
+            <div class="service">
+              <h3>Database Design & Management</h3>
+              <p>Creating optimized relational (SQL) and non-relational (NoSQL) databases, ensuring scalability and security.</p>
+            </div>
+            <div class="service">
+              <h3>ETL Solutions</h3>
+              <p>Building ETL processes for structured/unstructured data from multiple sources.</p>
+            </div>
+            <div class="service">
+              <h3>Data Cleaning & Preprocessing</h3>
+              <p>Preparing high-quality, consistent datasets by removing inconsistencies, missing values, and noise.</p>
+            </div>
+            <div class="service">
+              <h3>Data Integration</h3>
+              <p>Combining data from multiple systems (APIs, databases, flat files) into a single, reliable source.</p>
+            </div>
+            <div class="service">
+              <h3>Data Visualization & Reporting</h3>
+              <p>Creating dashboards and reports using Tableau, Power BI, or Matplotlib/Seaborn.</p>
+            </div>
+            <div class="service">
+              <h3>Cloud Data Engineering</h3>
+              <p>Implementing data solutions on AWS, Azure, or Google Cloud.</p>
+            </div>
+            <div class="service">
+              <h3>Performance Optimization</h3>
+              <p>Optimizing queries, storage, and pipelines for speed and efficiency.</p>
+            </div>
+            <div class="service">
+              <h3>Collaboration</h3>
+              <p>Supporting data scientists & analysts to build ML models and extract insights smoothly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- 
+    
+    <section class="projects" id="projects">
+        <div class="projects-container" data-aos="fade-up" data-aos-duration="1200">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/300x200/966428/ffffff?text=Data+Pipeline" alt="Data Pipeline Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Customer Data Pipeline</h3>
+                        <div class="project-tools">
+                            <span class="tool">Python</span>
+                            <span class="tool">Apache Spark</span>
+                            <span class="tool">AWS</span>
+                        </div>
+                        <a href="https://github.com/Aya-114" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="project-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/300x200/966428/ffffff?text=Sales+Dashboard" alt="Sales Dashboard Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Sales Analytics Dashboard</h3>
+                        <div class="project-tools">
+                            <span class="tool">Python</span>
+                            <span class="tool">Tableau</span>
+                            <span class="tool">SQL</span>
+                        </div>
+                        <a href="https://github.com/Aya-114" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="project-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/300x200/966428/ffffff?text=ETL+System" alt="ETL System Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Real-time ETL System</h3>
+                        <div class="project-tools">
+                            <span class="tool">Python</span>
+                            <span class="tool">Kafka</span>
+                            <span class="tool">MySQL</span>
+                        </div>
+                        <a href="https://github.com/Aya-114" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="project-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/300x200/966428/ffffff?text=ML+Pipeline" alt="ML Pipeline Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>ML Model Pipeline</h3>
+                        <div class="project-tools">
+                            <span class="tool">Python</span>
+                            <span class="tool">Scikit-learn</span>
+                            <span class="tool">Docker</span>
+                        </div>
+                        <a href="https://github.com/Aya-114" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="project-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/300x200/966428/ffffff?text=Data+Warehouse" alt="Data Warehouse Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Data Warehouse Design</h3>
+                        <div class="project-tools">
+                            <span class="tool">SQL</span>
+                            <span class="tool">PostgreSQL</span>
+                            <span class="tool">Azure</span>
+                        </div>
+                        <a href="https://github.com/Aya-114" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                Project 6 
+                <div class="project-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/300x200/966428/ffffff?text=Web+Scraper" alt="Web Scraper Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Web Scraping Tool</h3>
+                        <div class="project-tools">
+                            <span class="tool">Python</span>
+                            <span class="tool">BeautifulSoup</span>
+                            <span class="tool">Selenium</span>
+                        </div>
+                        <a href="https://github.com/Aya-114" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-more-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+                <a href="https://github.com/Aya-114" target="_blank" class="view-more-btn">
+                    <i class="fab fa-github"></i>
+                    View More Projects
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-hero" id="contactt">
+        <div class="contact-hero-container">
+            <div class="contact-info" data-aos="fade-right" data-aos-duration="1000">
+                <h1>Let's Work Together</h1>
+                <p class="subtitle">Ready to transform your data into insights?</p>
+                <p>I'm here to help you unlock the power of your data. Whether you need data pipeline development, analysis, or consulting services, I'm ready to discuss your project and provide solutions that drive results.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <i class="fas fa-envelope"></i>
+                        <div class="method-info">
+                            <h3>Email</h3>
+                            <p><a href="mailto:aya.alaa.dataengineer@gmail.com">aya.alaa.dataengineer@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="method-info">
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/201270144307?text=Hello%20Aya%2C%20I%27d%20like%20to%20know%20more%20about%20your%20Data%20Engineering%20services" target="_blank">+20 127 014 4307</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                        <i class="fab fa-linkedin"></i>
+                        <div class="method-info">
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://www.linkedin.com/in/aya-alaa-827303315/" target="_blank">Connect with me</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                        <i class="fab fa-github"></i>
+                        <div class="method-info">
+                            <h3>GitHub</h3>
+                            <p><a href="https://github.com/Aya-114" target="_blank">View my projects</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <h2>Send Me a Message</h2>
+                
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. I'll get back to you soon.
+                </div>
+                
+                <form action="https://formsubmit.co/alaahamed2413@gmail.com" method="POST" id="contactForm">
+                    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                    <input type="hidden" name="_subject" value="New contact form submission from portfolio!">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company/Organization</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="data-pipeline">Data Pipeline Development</option>
+                            <option value="data-analysis">Data Analysis & Insights</option>
+                            <option value="database-design">Database Design & Management</option>
+                            <option value="etl-solutions">ETL Solutions</option>
+                            <option value="data-cleaning">Data Cleaning & Preprocessing</option>
+                            <option value="data-visualization">Data Visualization & Reporting</option>
+                            <option value="cloud-engineering">Cloud Data Engineering</option>
+                            <option value="consulting">Data Engineering Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Project Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="under-1000">Under $1,000</option>
+                            <option value="1000-5000">$1,000 - $5,000</option>
+                            <option value="5000-10000">$5,000 - $10,000</option>
+                            <option value="10000-plus">$10,000+</option>
+                            <option value="discuss">Let's discuss</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" placeholder="Please describe your project, data challenges, timeline, and any specific requirements..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({offset:0});
+
+        function hamburg(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(0px)"
+        }
+        
+        function cancel(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(-500px)"
+        }
+        
+        function closeDropdown(){
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(-500px)"
+        }
+        
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('nav');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                navbar.classList.add('show');
+            } else {
+                navbar.classList.remove('show');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Form validation
+        const inputs = document.querySelectorAll('input[required], textarea[required]');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    this.style.borderColor = '#dc3545';
+                } else {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+        });
+
+        const emailInput = document.getElementById('email');
+        emailInput.addEventListener('input', function() {
+            const email = this.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (emailRegex.test(email)) {
+                this.style.borderColor = '#28a745';
+            } else if (email.length > 0) {
+                this.style.borderColor = '#dc3545';
+            }
+        });
+    </script>
+</body>
+</html>
